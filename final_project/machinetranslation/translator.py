@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#loading in apikey and url of IBM Watson Language Translation service from .env file
 apikey = os.environ['apikey']
 url = os.environ['url']
 
@@ -18,10 +19,10 @@ language_translator = LanguageTranslatorV3 (
 
 language_translator.set_service_url(url)
 
+#translating from english to french
 MODEL_ID1 = 'en-fr'
 
 def english_to_french(english_text):
-    #write the code here
     if english_text is None:
         return "No input text given, please enter text to be translated."
 
@@ -32,6 +33,7 @@ def english_to_french(english_text):
     french_text = translation
     return french_text
 
+#translating from french to english
 MODEL_ID2 = 'fr-en'
 
 def french_to_english(french_text):
